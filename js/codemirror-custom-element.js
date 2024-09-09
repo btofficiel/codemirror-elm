@@ -1,3 +1,7 @@
+import CodeMirror from 'codemirror';
+import 'codemirror/lib/codemirror.css';
+import 'codemirror/mode/javascript/javascript';
+
 class CodeMirrorJsonViewer extends HTMLElement {
     constructor() {
     super();
