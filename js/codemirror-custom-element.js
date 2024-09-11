@@ -14,6 +14,8 @@ class CodeMirrorJsonViewer extends HTMLElement {
 
     initializeCodeMirror() {
     const jsonData = JSON.parse(this.getAttribute('json-data'));
+    const width = this.getAttribute('width');
+    const height = this.getAttribute('height');
     const jsonString = JSON.stringify(jsonData, null, 2);
 
     this.editor = CodeMirror(this.querySelector('.code-editor'), {
@@ -21,10 +23,11 @@ class CodeMirrorJsonViewer extends HTMLElement {
       mode: 'application/json',
       readOnly: true,
       lineNumbers: true,
+      lineWrapping: true,
       foldGutter: true
     });
 
-    this.editor.setSize("auto", "100%");
+    this.editor.setSize(width, height);
     }
 }
 
